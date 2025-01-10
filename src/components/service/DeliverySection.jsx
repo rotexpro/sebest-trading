@@ -1,5 +1,5 @@
 import React from "react";
-import DeliveryImage from "../../assets/images/DeliveryImage.svg";
+import DeliveryImage from "../../assets/images/DeliveryImage.png";
 import TruckIcon from "../../assets/TruckIcon.svg";
 
 const DeliverySection = () => {
