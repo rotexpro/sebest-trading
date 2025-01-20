@@ -2,7 +2,7 @@ import React from "react";
 
 const ContactSection = () => {
   return (
-    <div className="p-8 container mx-auto min-h-screen">
+    <div className="flex flex-col justify-center p-8 container mx-auto h-[50vh] ">
       <h2 className="text-lg md:text-2xl lg:text-[32px] font-medium mb-12">
         We’d Love to Hear From You!
       </h2>
