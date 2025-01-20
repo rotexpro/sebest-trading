@@ -12,13 +12,10 @@ const AboutImageSection = () => {
         </h2>
 
         <p className="text-gray-700 text-xs md:text-sm lg:text-lg leading-[16.94px] md:leading-[19.36px]">
-          We are a leading wholesale distributor of frozen fish, proudly serving
-          retail companies with a passion for delivering the best of the ocean.
-          Our fleet of state-of-the-art trucks and advanced storage facilities
-          ensures that every product reaches you in its freshest form. Our
-          operations are backed by significant investments in logistics,
-          sustainability, and customer service, allowing us to set industry
-          standards and exceed client expectations.
+          As a company, it is our utmost desire to source for the best when it comes to frozen foods specifically fish 
+          and other kinds of seafood like prawns and shrimps at relatively good costs for the populace through retail outlets. 
+          Our fleet of fully functional trucks and cooling storage facilities ensure that every product reaches you in its freshest form. 
+          Our operations are backed by significant investments in logistics and customer service, allowing us to exceed client expectations.
         </p>
       </div>
       <div className="md:w-1/2">
