@@ -4,7 +4,7 @@ import HeroSectionImage from "../../assets/images/HeroSectionImage.png";
 const HeroSection = () => {
   return (
     <section
-      className="relative bg-cover bg-center h-[50vh] lg:h-[70vh] pt-16"
+      className="relative mt-[10vh] bg-cover bg-center h-[50vh] lg:h-[70vh]"
       style={{
         backgroundImage: `url(${HeroSectionImage})`,
       }}
@@ -12,7 +12,7 @@ const HeroSection = () => {
       <div className="absolute inset-0 bg-[#1E3F62] opacity-60"></div>
 
       <div className="relative container mx-auto flex flex-col gap-6 items-start justify-center h-full py-4 px-4 text-[#F3F3F3]">
-        <h1 className="text-lg sm:text-xl md:text-[32px] lg:text-[48px] font-bold lg:text-left leading-tight md:leading-[43.57px] sm:leading-[19.36px] mb-6">
+        <h1 className="text-2xl md:text-[32px] lg:text-[48px] font-bold lg:text-left leading-tight md:leading-[43.57px] sm:leading-[19.36px] mb-6">
           Your Trusted Partner for <br /> Frozen Quality.
         </h1>
 
