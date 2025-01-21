@@ -4,7 +4,7 @@ import HeroSectionImage from "../../assets/images/HeroSectionImage.png";
 const HeroSection = () => {
   return (
     <section
-      className="relative mt-[10vh] bg-cover bg-center h-[50vh] lg:h-[70vh]"
+      className="relative mt-[10vh] bg-cover bg-center h-[50vh] lg:h-[60vh]"
       style={{
         backgroundImage: `url(${HeroSectionImage})`,
       }}
