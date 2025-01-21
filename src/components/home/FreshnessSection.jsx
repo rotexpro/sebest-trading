@@ -2,7 +2,7 @@ import React from "react";
 
 const FreshnessSection = () => {
   return (
-    <section className="bg-secondary flex text-[#F3F3F3] px-6 py-12 lg:px-12 lg:py-16 h-[20vh] items-center">
+    <section className="bg-secondary flex text-[#F3F3F3] px-6 py-12 lg:px-12 lg:py-16 h-[30vh] items-center">
       <div className="relative container mx-auto">
         <h2 className="text-xl md:text-3xl lg:text-4xl font-bold mb-6">
           Freshness Preserved
