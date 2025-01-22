@@ -71,7 +71,7 @@ const Navbar = () => {
 
         <ul
           className={`${
-            isOpen ? "max-h-screen opacity-100" : "max-h-0 opacity-0"
+            isOpen ? "max-h-screen opacity-100 top-16" : "max-h-0 opacity-0"
           } lg:opacity-100 lg:max-h-screen overflow-hidden lg:flex lg:space-x-6 absolute lg:relative bg-white w-full lg:w-auto top-20 left-0 lg:top-0 px-6 lg:px-0 shadow-md lg:shadow-none transition-all duration-300 ease-in-out`}
         >
           <li className="py-2 lg:py-0">
