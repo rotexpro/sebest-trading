@@ -1,4 +1,3 @@
-import React from "react";
 import Herring from "../../assets/images/Herring.svg";
 import Mackerel from "../../assets/images/Mackerel.svg";
 import StockFish from "../../assets/images/StockFish.svg";
@@ -25,7 +24,7 @@ const FishGallery = () => {
   ];
 
   return (
-    <div className="flex justify-center items-center min-h-screen">
+    <div className="flex justify-center items-center ">
       <div className="flex justify-center items-center container mx-auto px-6 py-8 md:py-12">
         <div className="grid grid-cols-1 md:grid-cols-2 gap-12 md:gap-20">
           {fishData.map((fish, index) => (

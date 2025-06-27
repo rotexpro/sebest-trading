@@ -1,6 +1,5 @@
-import React from "react";
 import HeroSection from "../components/home/HeroSection";
-import FreshnessSection from "../components/home/FreshnessSection";
+// import FreshnessSection from "../components/home/FreshnessSection";
 import TrustedPartners from "../components/home/TrustedPartners";
 import Collection from "../components/home/Collection";
 import Features from "../components/home/Features";
@@ -10,7 +9,7 @@ const Home = () => {
   return (
     <div>
       <HeroSection />
-      <FreshnessSection />
+      {/* <FreshnessSection /> */}
       <TrustedPartners />
       <Collection />
       <AboutSection />
