@@ -39,14 +39,10 @@ export default function Navbar() {
       <nav className="fixed top-0 z-50 flex w-full justify-center pt-4">
         <div
           className="container mx-4 flex w-full items-center justify-between rounded-md
-                     bg-gray-200/60 px-4 py-2 shadow-md backdrop-blur-sm lg:shadow-none"
+             bg-white/80 px-4 py-2 shadow-md backdrop-blur-sm lg:shadow-none"
         >
           <NavLink to="/" aria-label="Sebest Trading home" className="flex">
-            <img
-              src={Logo}
-              alt="Sebest Trading logo"
-              className="h-10 w-auto object-contain"
-            />
+            <img src={Logo} alt="Sebest Trading logo" className="h-10 w-auto" />
           </NavLink>
 
           <button

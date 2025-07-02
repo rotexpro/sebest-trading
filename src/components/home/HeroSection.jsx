@@ -1,9 +1,9 @@
-import HeroSectionImage from "../../assets/images/HeroSectionImage.png";
+import HeroSectionImage from "../../assets/images/HeroSectionImage.jpeg";
 
 const HeroSection = () => {
   return (
     <section
-      className="relative z-0 bg-cover bg-center h-[45vh]"
+      className="relative z-0 bg-cover bg-center h-[50vh] lg:h-[60vh]"
       style={{
         backgroundImage: `url(${HeroSectionImage})`,
       }}
@@ -14,10 +14,12 @@ const HeroSection = () => {
         <h1 className="text-2xl md:text-[32px] lg:text-[48px] font-bold lg:text-left leading-tight md:leading-[43.57px] sm:leading-[19.36px] mb-6">
           Your Trusted Partner for <br /> Frozen Quality.
         </h1>
-        <p className="mb-6  text-sm md:text-base lg:text-lg font-semibold text-white">
+        <p className="mb-6 text-sm md:text-base lg:text-lg font-semibold text-white">
           Peak freshness locked in — nutrient-rich, flavor-packed, and always
-          ready when you are. Experience the convenience of frozen food that’s
-          as good as fresh, any day of the year.
+          ready when you are.
+          <br />
+          Experience the convenience of frozen food that’s as good as fresh, any
+          day of the year.
         </p>
 
         <a

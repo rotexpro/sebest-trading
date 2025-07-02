@@ -1,4 +1,4 @@
-import DeliveryImage from "../../assets/images/DeliveryImage.png";
+import DeliveryImage from "../../assets/images/DeliveryImage.jpeg";
 import TruckIcon from "../../assets/TruckIcon.svg";
 
 const DeliverySection = () => {
