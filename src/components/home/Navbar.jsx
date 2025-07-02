@@ -36,9 +36,9 @@ export default function Navbar() {
         />
       )}
 
-      <nav className="fixed top-0 z-50 flex w-full justify-center pt-4">
+      <nav className="fixed top-0 z-50 flex w-full pt-4">
         <div
-          className="container mx-4 flex w-full items-center justify-between rounded-md
+          className="container mx-auto flex w-full items-center justify-between rounded-md
              bg-white/80 px-4 py-2 shadow-md backdrop-blur-sm lg:shadow-none"
         >
           <NavLink to="/" aria-label="Sebest Trading home" className="flex">
