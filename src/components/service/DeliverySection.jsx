@@ -1,40 +1,40 @@
-import React from "react";
-import DeliveryImage from "../../assets/images/DeliveryImage.png";
+import DeliveryImage from "../../assets/images/DeliveryImage.jpeg";
 import TruckIcon from "../../assets/TruckIcon.svg";
 
 const DeliverySection = () => {
   return (
-    <div className="container mx-auto p-12 mb-52">
+    <div className="container mx-auto px-6 md:px-12 lg:px-16 py-12 mb-52">
+      <p className="mb-6 text-sm md:text-base lg:text-lg font-semibold text-gray-900">
+        Start ordering with confidence — Sebest delivers freshness that lasts.
+      </p>
+
       <section
-        className="relative py-20 px-6 md:px-12 lg:px-16 bg-cover bg-center"
+        className="relative bg-cover bg-center rounded-lg overflow-hidden"
         style={{ backgroundImage: `url(${DeliveryImage})` }}
       >
-        <div className="absolute inset-0 bg-[#6E1EEF4D]"></div>
+        <div className="absolute inset-0 bg-primary/60 mix-blend-multiply"></div>
 
-        <div className="relative z-10 flex flex-col items-center text-center md:text-left md:items-start">
-          <div className="mb-6">
-            <h2 className="text-base md:text-xl lg:text-[32px] font-bold text-[#F3F3F3] leading-tight md:leading-6 lg:leading-[38.73px] flex items-center">
-              Delivery
-              <img
-                src={TruckIcon}
-                alt="Truck Icon"
-                className="ml-3 w-6 h-6 md:w-8 md:h-8 lg:w-10 lg:h-10"
-              />
-            </h2>
-            <p className="text-sm md:text-base lg:text-lg mt-4 text-[#F3F3F3]">
-              We offer on-site delivery to clients where we operate in.
-            </p>
-          </div>
+        <div className="relative z-10 flex flex-col items-center md:items-start text-center md:text-left py-20 px-6">
+          <h2 className="flex items-center text-lg md:text-2xl lg:text-[32px] font-bold text-white">
+            Delivery
+            <img
+              src={TruckIcon}
+              alt=""
+              className="ml-3 w-6 h-6 md:w-8 md:h-8 lg:w-10 lg:h-10"
+            />
+          </h2>
 
-          <div className="w-full flex justify-center md:justify-start">
-            <a
-              href="/contact"
-              className="bg-primary hover:bg-primary-hover text-[#F3F3F3] px-6 py-3 text-sm md:text-base lg:text-lg rounded
-               font-bold transition duration-300 shadow-lg hover:shadow-xl transform hover:scale-105"
-            >
-              CONTACT US
-            </a>
-          </div>
+          <p className="mt-4 max-w-xl text-xs md:text-sm lg:text-base text-white">
+            We offer on-site delivery to clients where we operate.
+          </p>
+
+          <a
+            href="/contact"
+            className="mt-8 inline-block rounded bg-primary px-6 py-3 text-xs md:text-sm lg:text-base font-bold
+                       text-white shadow-lg transition hover:scale-105 hover:bg-primary-hover"
+          >
+            CONTACT&nbsp;US
+          </a>
         </div>
       </section>
     </div>

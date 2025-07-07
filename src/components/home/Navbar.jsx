@@ -1,120 +1,109 @@
-import React, { useState, useEffect, useRef } from "react";
+import { useState, useEffect } from "react";
 import { NavLink } from "react-router-dom";
 import Logo from "../../assets/Logo.svg";
 
-const Navbar = () => {
-  const [isOpen, setIsOpen] = useState(false);
-  const navRef = useRef(null);
+const pages = [
+  { path: "/", label: "Home" },
+  { path: "/about", label: "About us" },
+  { path: "/services", label: "Services" },
+  { path: "/gallery", label: "Gallery" },
+  { path: "/contact", label: "Contact us" },
+];
 
-  const navLinkClasses = ({ isActive }) =>
-    isActive
-      ? "text-primary font-bold"
-      : "text-gray-600 hover:text-primary-hover transition duration-300";
-
-  const closeMenu = () => setIsOpen(false);
+export default function Navbar() {
+  const [open, setOpen] = useState(false);
 
   useEffect(() => {
-    const handleOutsideClick = (event) => {
-      if (navRef.current && !navRef.current.contains(event.target)) {
-        closeMenu();
-      }
-    };
+    document.body.style.overflow = open ? "hidden" : "";
+  }, [open]);
 
-    document.addEventListener("mousedown", handleOutsideClick);
-    return () => {
-      document.removeEventListener("mousedown", handleOutsideClick);
-    };
-  }, []);
+  const navLinkClasses = ({ isActive }) => {
+    const base =
+      "relative transition-colors after:content-[''] after:absolute after:-bottom-0.5 " +
+      "after:left-0 after:h-[2px] after:bg-primary after:transition-[width] after:duration-300";
+    const active = "text-primary font-semibold after:w-full";
+    const inactive =
+      "text-gray-700 hover:text-primary-hover after:w-0 lg:hover:after:w-full";
+    return `${base} ${isActive ? active : inactive}`;
+  };
 
   return (
-    <nav className="bg-white fixed flex items-center w-full top-0 z-50 h-[10vh]" ref={navRef}>
-      <div className="container mx-auto flex justify-between items-center py-2 px-4">
-        <img src={Logo} alt="Sebest Trading Logo" className="h-10 w-auto" />
+    <>
+      {open && (
+        <div
+          className="fixed inset-0 z-40 bg-black/40 backdrop-blur-sm lg:hidden"
+          onClick={() => setOpen(false)}
+        />
+      )}
 
-        <button
-          className="lg:hidden text-primary"
-          onClick={() => setIsOpen(!isOpen)}
-          aria-label="Menu"
+      <nav className="fixed top-0 z-50 flex w-full pt-4">
+        <div
+          className="container mx-auto flex w-full items-center justify-between rounded-md
+             bg-white/80 px-4 py-2 shadow-md backdrop-blur-sm lg:shadow-none"
         >
-          {isOpen ? (
-            <svg
-              xmlns="http://www.w3.org/2000/svg"
-              className="h-8 w-8"
-              fill="none"
-              viewBox="0 0 24 24"
-              stroke="currentColor"
-            >
-              <path
-                strokeLinecap="round"
-                strokeLinejoin="round"
-                strokeWidth="2"
-                d="M6 18L18 6M6 6l12 12"
-              />
-            </svg>
-          ) : (
-            <svg
-              xmlns="http://www.w3.org/2000/svg"
-              className="h-8 w-8"
-              fill="none"
-              viewBox="0 0 24 24"
-              stroke="currentColor"
-            >
-              <path
-                strokeLinecap="round"
-                strokeLinejoin="round"
-                strokeWidth="2"
-                d="M4 6h16M4 12h16M4 18h16"
-              />
-            </svg>
-          )}
-        </button>
+          <NavLink to="/" aria-label="Sebest Trading home" className="flex">
+            <img src={Logo} alt="Sebest Trading logo" className="h-10 w-auto" />
+          </NavLink>
 
-        <ul
-          className={`${
-            isOpen ? "max-h-screen opacity-100 top-16" : "max-h-0 opacity-0"
-          } lg:opacity-100 lg:max-h-screen overflow-hidden lg:flex lg:space-x-6 absolute lg:relative bg-white w-full lg:w-auto top-20 left-0 lg:top-0 px-6 lg:px-0 shadow-md lg:shadow-none transition-all duration-300 ease-in-out`}
-        >
-          <li className="py-2 lg:py-0">
-            <NavLink to="/" className={navLinkClasses} onClick={closeMenu}>
-              Home
-            </NavLink>
-          </li>
-          <li className="py-2 lg:py-0">
-            <NavLink to="/about" className={navLinkClasses} onClick={closeMenu}>
-              About us
-            </NavLink>
-          </li>
-          <li className="py-2 lg:py-0">
-            <NavLink
-              to="/services"
-              className={navLinkClasses}
-              onClick={closeMenu}
+          <button
+            className="relative z-50 ml-4 rounded p-2 lg:hidden"
+            aria-label="Toggle navigation"
+            onClick={() => setOpen((prev) => !prev)}
+          >
+            <svg
+              className={`h-6 w-6 text-gray-800 transition-transform duration-300 ${
+                open ? "rotate-90" : ""
+              }`}
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              strokeWidth={2}
+              strokeLinecap="round"
+              strokeLinejoin="round"
             >
-              Services
-            </NavLink>
-          </li>
-          <li className="py-2 lg:py-0">
-            <NavLink
-              to="/gallery"
-              className={navLinkClasses}
-              onClick={closeMenu}
-            >
-              Gallery
-            </NavLink>
-          </li>
-          <li className="py-2 lg:py-0">
-            <NavLink
-              to="/contact"
-              className={navLinkClasses}
-              onClick={closeMenu}
-            >
-              Contact us
-            </NavLink>
-          </li>
+              {open ? (
+                <path d="M6 18L18 6M6 6l12 12" />
+              ) : (
+                <>
+                  <path d="M3 6h18" />
+                  <path d="M3 12h18" />
+                  <path d="M3 18h18" />
+                </>
+              )}
+            </svg>
+          </button>
+
+          <ul className="hidden gap-6 lg:flex">
+            {pages.map(({ path, label }) => (
+              <li key={path}>
+                <NavLink to={path} className={navLinkClasses}>
+                  {label}
+                </NavLink>
+              </li>
+            ))}
+          </ul>
+        </div>
+      </nav>
+
+      <aside
+        className={`fixed left-0 top-0 z-50 h-full w-4/5 max-w-xs transform bg-white
+                    p-8 pt-24 shadow-lg transition-transform duration-300 ease-in-out
+                    lg:hidden ${open ? "translate-x-0" : "-translate-x-full"}`}
+      >
+        <ul>
+          {pages.map(({ path, label }) => (
+            <li key={path} className="mb-6">
+              <NavLink
+                to={path}
+                className={navLinkClasses}
+                onClick={() => setOpen(false)}
+              >
+                {label}
+              </NavLink>
+            </li>
+          ))}
         </ul>
-      </div>
-    </nav>
+      </aside>
+    </>
   );
-};
-
-export default Navbar;
+}
